@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/seoul-jazz-festival/static/css/main.ce69061e.css",
+    "main.js": "/seoul-jazz-festival/static/js/main.3750a1d1.js",
+    "index.html": "/seoul-jazz-festival/index.html",
+    "main.ce69061e.css.map": "/seoul-jazz-festival/static/css/main.ce69061e.css.map",
+    "main.3750a1d1.js.map": "/seoul-jazz-festival/static/js/main.3750a1d1.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ce69061e.css",
+    "static/js/main.3750a1d1.js"
+  ]
+}

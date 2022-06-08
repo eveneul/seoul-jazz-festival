@@ -1,0 +1,20 @@
+//common
+@import './common/reset';
+@import './common/variable';
+
+@import './common/header';
+@import './common/footer';
+@import './common/menu';
+@import './common/popup';
+@import './common/sub-layout';
+
+//main page
+@import './main/visual';
+
+// sub page
+@import './sub/artist';
+@import './sub/faq';
+@import './sub/gallery';
+@import './sub/join';
+@import './sub/notice';
+@import './sub/youtube';

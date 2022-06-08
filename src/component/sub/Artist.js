@@ -1,7 +1,60 @@
 import React from 'react';
+import SubLayout from '../common/SubLayout';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
+import Popup from '../common/Popup';
 
 function Artist() {
-	return <div>Artist</div>;
+	const path = process.env.PUBLIC_URL;
+	const [artists, setArtists] = useState([]);
+	const [onPopup, setOnPopup] = useState(false);
+	const togglePop = () => {
+		setOnPopup(true);
+	};
+
+	useEffect(() => {
+		axios.get(`${path}/DB/artist.json`).then((json) => {
+			setArtists(json.data.artist);
+		});
+	}, []);
+
+	return (
+		<>
+			<SubLayout name={'Artist'}>
+				<article className='artist-list'>
+					<ul>
+						{artists.map((artist, idx) => {
+							return <li key={idx}>{artist.name}</li>;
+						})}
+					</ul>
+				</article>
+				<article className='artist-thumb'>
+					{artists.map((artist, idx) => {
+						return (
+							<div
+								className='artist-card'
+								key={idx}
+								onClick={() => {
+									setOnPopup(!onPopup);
+									console.log('히!');
+								}}>
+								<div className='img'>
+									<img
+										src={`${path}/img/artist/${artist.pic}`}
+										alt={`${artist.name} photo`}
+									/>
+								</div>
+								<div className='text'>
+									<span>{artist.name}</span>
+								</div>
+							</div>
+						);
+					})}
+				</article>
+				{onPopup && <Popup setOnPopup={setOnPopup} />}
+			</SubLayout>
+		</>
+	);
 }
 
 export default Artist;

@@ -33,6 +33,8 @@ function App() {
 			<Route path='/join' component={Join} />
 			<Route path='/notice' component={Notice} />
 			<Route path='/youtube' component={Youtube} />
+
+			<Footer />
 		</>
 	);
 }

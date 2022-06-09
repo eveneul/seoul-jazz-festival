@@ -1,0 +1,57 @@
+footer {
+	width: 100%;
+	font-family: 'Noto Sans KR', sans-serif;
+	.inner {
+		width: 1180px;
+		margin: 0 auto;
+		padding: 50px 0;
+
+		ul {
+			display: flex;
+			justify-content: center;
+			margin-bottom: 20px;
+
+			li {
+				position: relative;
+
+				&:not(:last-child) {
+					margin-right: 100px;
+					&::after {
+						content: '';
+						position: absolute;
+						top: 50%;
+						right: -50px;
+						transform: translateY(-50%);
+						width: 5px;
+						height: 5px;
+						border-radius: 50%;
+						background-color: #999;
+					}
+				}
+
+				a {
+					font-size: 18px;
+					font-weight: bold;
+				}
+			}
+		}
+
+		.footer-info {
+			display: flex;
+			justify-content: space-around;
+			margin-bottom: 20px;
+			letter-spacing: -0.03em;
+			color: #666;
+			address {
+				font-style: initial;
+			}
+		}
+
+		span {
+			display: flex;
+			justify-content: center;
+			color: #888;
+			font-size: $fontS;
+		}
+	}
+}

@@ -9,7 +9,7 @@
 		width: 100%;
 		height: 300px;
 		font-family: 'Montserrat', sans-serif;
-		margin-bottom: 100px;
+		margin-bottom: 120px;
 
 		&::after {
 			content: '';
@@ -17,39 +17,23 @@
 			clear: both;
 		}
 
-		h3,
-		div,
-		p {
-			float: left;
-		}
-
-		h3,
-		p {
-			width: 20%;
-			height: 100%;
-		}
-
 		h3 {
-			font-size: $fontXXL;
-			font-weight: 100;
+			font-size: $fontXL;
+			font-weight: normal;
+			color: $text;
 		}
 
-		div {
-			background-color: #333;
-			width: 60%;
-			height: 100%;
+		> iframe {
+			width: 100%;
+			height: 300px;
+			margin: 10px 0;
+		}
+
+		> p {
 			display: flex;
-			justify-content: center;
-			align-items: center;
-			color: #fff;
-			font-size: $fontXXL;
-		}
-
-		p {
-			font-size: $fontM;
-			color: #333;
-			padding-left: 10px;
-			line-height: 1.2;
+			justify-content: end;
+			font-size: $fontS;
+			color: $text;
 		}
 	}
 	.subVid {
@@ -78,8 +62,8 @@
 			width: 100%;
 			height: 100%;
 			margin-bottom: 10px;
-			border-top: 1px solid $bg;
 			padding-top: 10px;
+			overflow: hidden;
 
 			&:hover img {
 				filter: none;
@@ -91,6 +75,8 @@
 				object-fit: cover;
 				filter: saturate(0);
 				transition: 0.5s;
+				transform: scale(1.25);
+				cursor: pointer;
 			}
 		}
 	}

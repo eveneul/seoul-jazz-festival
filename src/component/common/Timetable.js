@@ -4,7 +4,7 @@ import SubLayout from './SubLayout';
 function Timetable() {
 	return (
 		<>
-			<SubLayout name={'TimeTable'}>
+			<SubLayout name={'TimeTable'} color={'#1a1a1a'}>
 				<table>
 					<caption className='sr-only'>서울재즈페스티벌 타임테이블</caption>
 					<tbody>

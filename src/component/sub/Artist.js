@@ -22,7 +22,7 @@ function Artist() {
 	return (
 		<>
 			{onPopup && <Popup setOnPopup={setOnPopup} />}
-			<SubLayout name={'Artist'}>
+			<SubLayout name={'Artist'} color={'#000'}>
 				<article className='artist-list'>
 					<ul>
 						{artists.map((artist, idx) => {

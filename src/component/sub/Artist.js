@@ -3,6 +3,7 @@ import SubLayout from '../common/SubLayout';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import Popup from '../common/Popup';
+import Timetable from '../common/Timetable';
 
 function Artist() {
 	const path = process.env.PUBLIC_URL;
@@ -20,6 +21,7 @@ function Artist() {
 
 	return (
 		<>
+			{onPopup && <Popup setOnPopup={setOnPopup} />}
 			<SubLayout name={'Artist'}>
 				<article className='artist-list'>
 					<ul>
@@ -51,8 +53,8 @@ function Artist() {
 						);
 					})}
 				</article>
-				{onPopup && <Popup setOnPopup={setOnPopup} />}
 			</SubLayout>
+			<Timetable />
 		</>
 	);
 }

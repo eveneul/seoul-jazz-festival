@@ -6,46 +6,48 @@ import YoutubePop from './YoutubePop';
 
 function Youtube() {
 	const [Vids, setVids] = useState([]);
-	const [Index, setIndex] = useState(0);
+	const [mainVid, setMainVid] = useState([]);
 	const [open, setOpen] = useState(false);
 	const [idx, setIdx] = useState(0);
 
-	// const mainVidPlaylist = 'PLUzA4Nj5MAHHx6PnFC0k3JInIoqpRljWf';
-	// const mainVidNum = 1;
-	// const mainVidUrl = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=${key}&playlistId=${mainVidPlaylist}&maxResults=${mainVidNum}`;
-
-	const fetchYoutube = () => {
+	const subYoutube = () => {
 		const key = 'AIzaSyB7x1LAoidfLll4QFRLADxWagGsvelBXRs';
 		const subVidPlaylist = 'PLUzA4Nj5MAHGeFBwh55iK7V4hY9aDp6ds';
 		const subVidNum = 6;
 		const subVidUrl = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=${key}&playlistId=${subVidPlaylist}&maxResults=${subVidNum}`;
 
 		axios.get(subVidUrl).then((json) => {
-			console.log(json);
 			setVids(json.data.items);
-			console.log(json.data.items);
 		});
 	};
 
-	useEffect(fetchYoutube, []);
+	const mainYoutube = () => {
+		const key = 'AIzaSyB7x1LAoidfLll4QFRLADxWagGsvelBXRs';
+		const mainVidPlaylist = 'PLUzA4Nj5MAHHx6PnFC0k3JInIoqpRljWf';
+		const mainVidNum = 1;
+		const mainVidUrl = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=${key}&playlistId=${mainVidPlaylist}&maxResults=${mainVidNum}`;
+
+		axios.get(mainVidUrl).then((json) => {
+			setMainVid(json.data.items);
+		});
+	};
+
+	useEffect(subYoutube, []);
+	useEffect(mainYoutube, []);
 
 	return (
 		<>
 			<SubLayout name={'Youtube'} color={'#4e4e4e'}>
 				<article className='mainVid'>
-					<h3>[SJF ANNOUNCEMENT] 제14회 서울재즈페스티벌 2022 라인업 발표</h3>
-					<iframe
-						src='https://www.youtube.com/embed/5dk5m1kq_E8'
-						frameborder='0'></iframe>
-					<p>
-						페스티벌의 꽃, 제14회 서울재즈페스티벌 2022의 라인업을 공개합니다!
-					</p>
+					<h3>{mainVid[0].snippet.title}</h3>
+					<img
+						src={mainVid[0].snippet.thumbnails.standard.url}
+						alt={mainVid[0].snippet.title}
+					/>
+					<p>{mainVid[0].snippet.description}</p>
 				</article>
 				{Vids.map((vid, idx) => {
 					const tit = vid.snippet.title;
-					const desc = vid.snippet.description;
-					const date = vid.snippet.publishedAt;
-
 					return (
 						<>
 							<article className='subVid' key={idx}>

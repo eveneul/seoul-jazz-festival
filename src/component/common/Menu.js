@@ -30,8 +30,8 @@ function Menu({ onMenu }) {
 							</NavLink>
 						</li>
 						<li>
-							<NavLink to='/faq' onClick={onMenu}>
-								Faq
+							<NavLink to='/location' onClick={onMenu}>
+								Location
 							</NavLink>
 						</li>
 						<li>

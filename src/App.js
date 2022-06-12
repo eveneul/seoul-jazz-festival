@@ -9,7 +9,7 @@ import Footer from './component/common/Footer';
 import Visual from './component/main/Visual';
 //sub
 import Artist from './component/sub/Artist';
-import Faq from './component/sub/Faq';
+import Location from './component/sub/Location';
 import Gallery from './component/sub/Gallery';
 import Join from './component/sub/Join';
 import Notice from './component/sub/Notice';
@@ -28,7 +28,7 @@ function App() {
 			</Switch>
 
 			<Route path='/artist' component={Artist} />
-			<Route path='/faq' component={Faq} />
+			<Route path='/location' component={Location} />
 			<Route path='/gallery' component={Gallery} />
 			<Route path='/join' component={Join} />
 			<Route path='/notice' component={Notice} />

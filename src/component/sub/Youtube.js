@@ -38,14 +38,14 @@ function Youtube() {
 	return (
 		<>
 			<SubLayout name={'Youtube'} color={'#4e4e4e'}>
-				<article className='mainVid'>
+				{/* <article className='mainVid'>
 					<h3>{mainVid[0].snippet.title}</h3>
 					<img
 						src={mainVid[0].snippet.thumbnails.standard.url}
 						alt={mainVid[0].snippet.title}
 					/>
 					<p>{mainVid[0].snippet.description}</p>
-				</article>
+				</article> */}
 				{Vids.map((vid, idx) => {
 					const tit = vid.snippet.title;
 					return (

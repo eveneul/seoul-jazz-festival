@@ -1,0 +1,130 @@
+.Community {
+	width: 100%;
+	position: relative;
+
+	.community-inner {
+		width: 1180px;
+		margin: 0 auto;
+
+		.community-title {
+			padding: 50px 0;
+			h2 {
+				font-size: $fontXXXL;
+				font-family: 'Montserrat', sans-serif;
+				text-align: center;
+			}
+		}
+		.inputBox {
+			margin-bottom: 30px;
+
+			.write-box {
+				input {
+					display: block;
+					width: 100%;
+					padding: 10px;
+					margin-bottom: 20px;
+				}
+
+				textarea {
+					width: 100%;
+					padding: 20px 10px;
+					resize: none;
+				}
+			}
+
+			.btns {
+				display: flex;
+				justify-content: flex-end;
+				margin-top: 20px;
+				button {
+					display: inline-block;
+					background-color: $pink;
+					border: none;
+					padding: 10px 30px;
+					border-radius: 100px;
+					margin-left: 20px;
+					font-weight: bold;
+					color: $text;
+
+					&:nth-of-type(2) {
+						background-color: $green;
+					}
+				}
+			}
+		}
+
+		.showBox {
+			.edit-mode {
+				width: 100%;
+
+				input {
+					display: block;
+					width: 100%;
+					padding: 10px 20px;
+					margin-bottom: 20px;
+				}
+
+				textarea {
+					width: 100%;
+					display: block;
+					padding: 20px;
+					resize: none;
+					margin-bottom: 30px;
+				}
+
+				> .btns {
+					display: flex;
+					justify-content: flex-end;
+					button {
+						display: inline-block;
+						background-color: $pink;
+						border: none;
+						padding: 10px 30px;
+						border-radius: 100px;
+						margin-left: 20px;
+						font-weight: bold;
+						color: $text;
+
+						&:nth-of-type(2) {
+							background-color: $green;
+						}
+					}
+				}
+			}
+
+			> article {
+				margin-bottom: 50px;
+				padding: 20px;
+				border-top: 1px solid $bg;
+				h3 {
+					font-size: $fontXL;
+					color: $black;
+					margin-bottom: 20px;
+				}
+
+				p {
+					color: $text;
+				}
+
+				> .btns {
+					display: flex;
+					justify-content: flex-end;
+					button {
+						display: inline-block;
+						background-color: $pink;
+						border: none;
+						padding: 10px 30px;
+						border-radius: 100px;
+						margin-left: 20px;
+						font-weight: bold;
+						color: $text;
+
+						&:nth-of-type(2) {
+							background-color: $green;
+						}
+					}
+				}
+			}
+		}
+	}
+}

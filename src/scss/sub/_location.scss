@@ -1,0 +1,41 @@
+.Location {
+	.inner {
+		#map {
+			width: 100%;
+			height: 400px;
+			background-color: #000;
+		}
+		button {
+			width: 140px;
+			height: 40px;
+			border: none;
+			background-color: $green;
+			color: $text;
+			border-radius: 100px;
+			font-weight: bold;
+			margin-top: 20px;
+			margin-right: 20px;
+			cursor: pointer;
+		}
+
+		.map-info {
+			margin: 20px 0;
+			> ul > li {
+				list-style: disc;
+				margin-top: 20px;
+				font-weight: bold;
+				font-size: $fontL;
+				color: $text;
+
+				> ul {
+					font-weight: normal;
+
+					> li {
+						margin-top: 10px;
+						list-style: circle;
+					}
+				}
+			}
+		}
+	}
+}

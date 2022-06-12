@@ -27,7 +27,7 @@ function Join() {
 		const num = /[0-9]/;
 		const spc = /[`~!@#$%^&*()_+-=]/;
 
-		if (Val.userId.length < 5) {
+		if (Val.userId.length < 4) {
 			errs.userId = '아이디를 4글자 이상 입력해 주세요';
 		}
 
@@ -60,7 +60,6 @@ function Join() {
 		if (!Val.funnels) {
 			errs.funnels = '유입경로를 한 개 이상 선택해 주세요';
 		}
-
 		if (Val.comment.length < 20) {
 			errs.comment = '코멘트를 20글자 이상 입력해 주세요';
 		}
@@ -97,10 +96,22 @@ function Join() {
 
 	return (
 		<SubLayout name={'Join'} color={'#0066ff'}>
+			<article>
+				<textarea>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae
+					tenetur non dolores voluptatem impedit laudantium veritatis
+					doloremque? Facere fuga ab non minima sit! Sapiente, libero doloribus
+					enim dignissimos natus delectus quibusdam autem, amet nesciunt,
+					eveniet quo facere quod molestiae numquam.
+				</textarea>
+				<input type='checkbox' />
+				<label htmlFor='agree'>약관에 동의하십니까?</label>
+			</article>
+
 			<form onSubmit={handleSubmit}>
 				<fieldset>
 					<legend className='sr-only'></legend>
-					<table border='1'>
+					<table>
 						<caption className='sr-only'></caption>
 						<tbody>
 							{/* Id 인증처리 */}
@@ -117,7 +128,7 @@ function Join() {
 										value={Val.userId}
 										onChange={handleChange}
 									/>
-									<span>{Err.userId}</span>
+									<span className='err'>{Err.userId}</span>
 								</td>
 							</tr>
 							{/* 비밀번호 인증처리 */}
@@ -134,7 +145,7 @@ function Join() {
 										value={Val.password1}
 										onChange={handleChange}
 									/>
-									<span>{Err.password1}</span>
+									<span className='err'>{Err.password1}</span>
 								</td>
 							</tr>
 							{/* 비밀번호 재인증처리 */}
@@ -151,7 +162,7 @@ function Join() {
 										value={Val.password2}
 										onChange={handleChange}
 									/>
-									<span>{Err.password2}</span>
+									<span className='err'>{Err.password2}</span>
 								</td>
 							</tr>
 							{/* email 인증처리 */}
@@ -168,7 +179,7 @@ function Join() {
 										value={Val.email}
 										onChange={handleChange}
 									/>
-									<span>{Err.email}</span>
+									<span className='err'>{Err.email}</span>
 								</td>
 							</tr>
 							{/* 이름 */}
@@ -185,7 +196,7 @@ function Join() {
 										value={Val.name}
 										onChange={handleChange}
 									/>
-									<span>{Err.name}</span>
+									<span className='err'>{Err.name}</span>
 								</td>
 							</tr>
 							{/* 성별 */}
@@ -206,7 +217,7 @@ function Join() {
 										name='gender'
 										onChange={handleGender}
 									/>
-									<span>{Err.gender}</span>
+									<span className='err'>{Err.gender}</span>
 								</td>
 							</tr>
 							{/* 유입경로 */}
@@ -234,7 +245,7 @@ function Join() {
 										name='funnels'
 										onChange={handleCheck}
 									/>
-									<span>{Err.funnels}</span>
+									<span className='err'>{Err.funnels}</span>
 								</td>
 							</tr>
 							{/* 코멘트 */}
@@ -249,13 +260,13 @@ function Join() {
 										value={Val.comment}
 										cols='30'
 										rows='10'
-										placeholder='코멘트를 입력해 주세요'
+										placeholder='코멘트를 20글자 이상 입력해 주세요'
 										onChange={handleChange}></textarea>
-									<span>{Err.comment}</span>
+									<span className='err'>{Err.comment}</span>
 								</td>
 							</tr>
 							<tr>
-								<th col='2'>
+								<th colspan='2'>
 									<input type='reset' value='RESET' />
 									<input type='submit' value='SUBMIT' />
 								</th>

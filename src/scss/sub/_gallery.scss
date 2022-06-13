@@ -1,0 +1,38 @@
+.Gallery {
+	.galleryWrap {
+		width: 100%;
+		opacity: 0;
+		transform: translateY(100px);
+		transition: 0.5s;
+
+		&.on {
+			opacity: 1;
+			transform: translateY(0);
+		}
+
+		article {
+			width: 25%;
+			padding: 20px;
+			border: 1px solid #dcdcdc;
+			.pic {
+				width: 100%;
+				margin-bottom: 10px;
+				img {
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+				}
+			}
+
+			.text {
+				h3 {
+					font-size: $fontM;
+				}
+
+				span {
+					font-size: $fontS;
+				}
+			}
+		}
+	}
+}

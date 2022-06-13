@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import axios from 'axios';
 import SubLayout from '../common/SubLayout';
 import Masonry from 'react-masonry-component';
+import BasicPop from './BasicPop';
 
 function Gallery() {
 	const frame = useRef(null);
@@ -9,6 +10,8 @@ function Gallery() {
 
 	const [Items, setItems] = useState([]);
 	const [Loading, setLoading] = useState(true);
+	const [Open, setOpen] = useState(false);
+	const [Idx, setIdx] = useState(0);
 
 	const getImg = async (opt) => {
 		const key = 'c242a84b957d53602081a6a1c4adef5d';
@@ -56,51 +59,66 @@ function Gallery() {
 	}, []);
 
 	return (
-		<SubLayout name={'Gallery'}>
-			{Loading && (
-				<img
-					src={`${process.env.PUBLIC_URL}/img/loading.gif`}
-					className='loading'
-				/>
-			)}
-
-			<div ref={frame} className='galleryWrap'>
-				<div className='search-box'>
-					<input
-						type='text'
-						ref={input}
-						placeholder='검색어를 입력하세요'
-						onKeyUp={(e) => {
-							if (e.key === 'Enter') {
-								searchImg();
-							}
-						}}
+		<>
+			<SubLayout name={'Gallery'}>
+				{Loading && (
+					<img
+						src={`${process.env.PUBLIC_URL}/img/loading.gif`}
+						className='loading'
 					/>
-					<button onClick={searchImg}>SEARCH</button>
-				</div>
-				<Masonry>
-					{Items.map((item, idx) => {
-						return (
-							<article key={idx}>
-								<div className='content'>
-									<div className='pic'>
-										<img
-											src={`https://live.staticflickr.com/${item.id}/${item.id}_${item.secret}_b.jpg`}
-											alt={item.title}
-										/>
-									</div>
-									<div className='text'>
-										<h3>{item.title}</h3>
+				)}
 
-										<span>{item.owner}</span>
+				<div ref={frame} className='galleryWrap'>
+					<div className='search-box'>
+						<input
+							type='text'
+							ref={input}
+							placeholder='검색어를 입력하세요'
+							onKeyUp={(e) => {
+								if (e.key === 'Enter') {
+									searchImg();
+								}
+							}}
+						/>
+						<button onClick={searchImg}>SEARCH</button>
+					</div>
+					<Masonry>
+						{Items.map((item, idx) => {
+							return (
+								<article
+									key={idx}
+									onClick={() => {
+										setOpen(true);
+										setIdx(idx);
+									}}>
+									<div className='content'>
+										<div className='pic'>
+											<img
+												src={`https://live.staticflickr.com/${item.id}/${item.id}_${item.secret}_b.jpg`}
+												alt={item.title}
+											/>
+										</div>
+										<div className='text'>
+											<h3>{item.title}</h3>
+
+											<span>{item.owner}</span>
+										</div>
 									</div>
-								</div>
-							</article>
-						);
-					})}
-				</Masonry>
-			</div>
-		</SubLayout>
+								</article>
+							);
+						})}
+					</Masonry>
+				</div>
+			</SubLayout>
+			{Open && (
+				<BasicPop setOpen={setOpen}>
+					<img
+						src={`https://live.staticflickr.com/${Items[Idx].server}/${Items[Idx].id}_${Items[Idx].secret}_b.jpg`}
+						alt={Items[Idx].title}
+					/>
+				</BasicPop>
+			)}
+		</>
 	);
 }
 

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-function YoutubePop({ children, setOpen }) {
+function BasicPop({ children, setOpen }) {
 	useEffect(() => {
 		document.body.style.overflow = 'hidden';
 
@@ -11,7 +11,7 @@ function YoutubePop({ children, setOpen }) {
 
 	return (
 		<>
-			<div className='youtubePop'>
+			<div className='basicPop'>
 				<div className='con'>
 					{children}
 					<span className='close' onClick={() => setOpen(false)}>
@@ -23,4 +23,4 @@ function YoutubePop({ children, setOpen }) {
 	);
 }
 
-export default YoutubePop;
+export default BasicPop;

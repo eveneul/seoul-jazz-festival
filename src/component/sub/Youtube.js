@@ -2,7 +2,7 @@ import React from 'react';
 import SubLayout from '../common/SubLayout';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import YoutubePop from './YoutubePop';
+import BasicPop from './BasicPop';
 
 function Youtube() {
 	const [Vids, setVids] = useState([]);
@@ -70,11 +70,11 @@ function Youtube() {
 			</SubLayout>
 
 			{open && (
-				<YoutubePop setOpen={setOpen}>
+				<BasicPop setOpen={setOpen}>
 					<iframe
 						src={`https://www.youtube.com/embed/${Vids[idx].snippet.resourceId.videoId}`}
 						frameborder='0'></iframe>
-				</YoutubePop>
+				</BasicPop>
 			)}
 		</>
 	);

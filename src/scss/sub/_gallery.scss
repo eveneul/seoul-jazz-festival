@@ -4,6 +4,7 @@
 		top: 0;
 		left: 50%;
 		transform: translateX(-50%);
+		z-index: 5;
 	}
 
 	.galleryWrap {
@@ -11,6 +12,26 @@
 		opacity: 0;
 		transform: translateY(100px);
 		transition: transform 2s, opacity 2s;
+
+		.search-box {
+			margin: 0 auto;
+			padding: 20px 0;
+			text-align: center;
+
+			input {
+				padding: 10px 20px;
+				margin-right: 20px;
+				border: none;
+				border-bottom: 1px solid #dfdfdf;
+			}
+
+			button {
+				border: none;
+				padding: 10px 20px;
+				border-radius: 100px;
+				background-color: #efefef;
+			}
+		}
 
 		&.on {
 			opacity: 1;

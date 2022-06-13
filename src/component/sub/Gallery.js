@@ -39,7 +39,7 @@ function Gallery() {
 	};
 
 	const searchImg = () => {
-		const result = input.current.value;
+		const result = input.current.value.trim();
 		input.current.value = '';
 		setLoading(true);
 		frame.current.classList.remove('on');

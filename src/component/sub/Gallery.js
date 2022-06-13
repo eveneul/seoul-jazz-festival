@@ -9,10 +9,13 @@ function Gallery() {
 
 	const key = 'c242a84b957d53602081a6a1c4adef5d';
 	const method_interest = 'flickr.interestingness.getList';
+	const method_search = 'flickr.photos.search';
 	const num = 20;
-	const url = `https://www.flickr.com/services/rest/?method=${method_interest}&api_key=${key}&per_page=${num}&nojsoncallback=1&format=json`;
+	const interest_url = `https://www.flickr.com/services/rest/?method=${method_interest}&api_key=${key}&per_page=${num}&nojsoncallback=1&format=json`;
 
-	const getImg = async () => {
+	const search_url = `https://www.flickr.com/services/rest/?method=${method_search}&api_key=${key}&per_page=${num}&nojsoncallback=1&format=json&tags=서울재즈페스티벌`;
+
+	const getImg = async (url) => {
 		await axios.get(url).then((json) => {
 			console.log(json.data.photos.photo);
 			setItems(json.data.photos.photo);
@@ -22,7 +25,7 @@ function Gallery() {
 	};
 
 	useEffect(() => {
-		getImg();
+		getImg(search_url);
 	}, []);
 
 	return (

@@ -5,20 +5,25 @@ import Masonry from 'react-masonry-component';
 
 function Gallery() {
 	const frame = useRef(null);
-	const userId = '195703740@N02';
+	const input = useRef(null);
 
 	const [Items, setItems] = useState([]);
 	const [Loading, setLoading] = useState(true);
 
-	const key = 'c242a84b957d53602081a6a1c4adef5d';
-	const method_interest = 'flickr.interestingness.getList';
-	const method_search = 'flickr.photos.search';
-	const num = 50;
-	const interest_url = `https://www.flickr.com/services/rest/?method=${method_interest}&api_key=${key}&per_page=${num}&nojsoncallback=1&format=json`;
+	const getImg = async (opt) => {
+		const key = 'c242a84b957d53602081a6a1c4adef5d';
+		const method_search = 'flickr.photos.search';
+		const method_user = 'flickr.people.getPhotos';
+		let url = '';
 
-	const search_url = `https://www.flickr.com/services/rest/?method=${method_search}&api_key=${key}&per_page=${num}&nojsoncallback=1&format=json&tags=jazzfestival`;
+		if (opt.type === 'begin') {
+			url = `https://www.flickr.com/services/rest/?method=${method_user}&api_key=${key}&per_page=${opt.count}&nojsoncallback=1&format=json&user_id=${opt.user}`;
+		}
 
-	const getImg = async (url) => {
+		if (opt.type === 'search') {
+			url = `https://www.flickr.com/services/rest/?method=${method_search}&api_key=${key}&per_page=${opt.count}&nojsoncallback=1&format=json&tags=${opt.tags}`;
+		}
+
 		await axios.get(url).then((json) => {
 			console.log(json.data.photos.photo);
 			setItems(json.data.photos.photo);
@@ -30,8 +35,24 @@ function Gallery() {
 		}, 1000);
 	};
 
+	const searchImg = () => {
+		const result = input.current.value;
+		input.current.value = '';
+		setLoading(true);
+		frame.current.classList.remove('on');
+		getImg({
+			type: 'search',
+			count: 20,
+			tags: result,
+		});
+	};
+
 	useEffect(() => {
-		getImg(search_url);
+		getImg({
+			type: 'begin',
+			count: 20,
+			user: '195703740@N02',
+		});
 	}, []);
 
 	return (
@@ -42,7 +63,21 @@ function Gallery() {
 					className='loading'
 				/>
 			)}
+
 			<div ref={frame} className='galleryWrap'>
+				<div className='search-box'>
+					<input
+						type='text'
+						ref={input}
+						placeholder='검색어를 입력하세요'
+						onKeyUp={(e) => {
+							if (e.key === 'Enter') {
+								searchImg();
+							}
+						}}
+					/>
+					<button onClick={searchImg}>SEARCH</button>
+				</div>
 				<Masonry>
 					{Items.map((item, idx) => {
 						return (

@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowDownLong } from '@fortawesome/free-solid-svg-icons';
 
 function Visual() {
+	const path = process.env.PUBLIC_URL;
+	const [headliner, setHeadliner] = useState([]);
+
 	return (
 		<figure className='visual'>
 			<div className='text'>

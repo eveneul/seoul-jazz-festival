@@ -1,10 +1,91 @@
 figure.visual {
 	width: 100%;
 	height: 100vh;
-	background-color: $bg;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	color: $white;
-	font-size: $fontXXL;
+	background: rgb(236, 235, 234);
+	background: radial-gradient(
+		circle,
+		rgba(236, 235, 234, 1) 0%,
+		rgba(245, 208, 209, 0.6489189425770308) 33%,
+		rgba(236, 240, 240, 1) 66%,
+		rgba(236, 234, 228, 1) 100%
+	);
+	color: $text;
+	position: relative;
+
+	.text {
+		position: absolute;
+		top: 50%;
+		left: 10%;
+		transform: translateY(-50%);
+		.title {
+			h2 {
+				font-family: 'Fraunces', serif;
+				font-size: 8rem;
+				font-weight: 400;
+				text-transform: uppercase;
+			}
+		}
+
+		.sub-title {
+			display: flex;
+			justify-content: space-between;
+			position: relative;
+
+			&::after {
+				content: '';
+				width: 20%;
+				height: 1px;
+				background-color: $bg;
+				position: absolute;
+				top: 80%;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+			span {
+				margin-top: 20px;
+				font-size: $fontL;
+			}
+		}
+	}
+
+	.vid {
+		position: absolute;
+		top: 50%;
+		right: 10%;
+		transform: translateY(-50%);
+
+		div {
+			position: relative;
+			width: 500px;
+			height: 500px;
+			background-color: $bg;
+			border-top-left-radius: 50%;
+			border-top-right-radius: 50%;
+
+			&::before {
+				content: '';
+				position: absolute;
+				top: -200px;
+				left: 50%;
+				transform: translateX(-50%);
+
+				width: 1px;
+				height: 300px;
+				background-color: $bg;
+			}
+		}
+	}
+
+	.scroll-icon {
+		position: absolute;
+		bottom: 20px;
+		left: 50%;
+		transform: translateX(-50%);
+
+		svg {
+			width: 20px;
+			height: 20px;
+			opacity: 0.5;
+		}
+	}
 }

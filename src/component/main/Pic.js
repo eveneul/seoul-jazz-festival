@@ -1,7 +1,7 @@
 import React from 'react';
 
 function Pic() {
-	return <div>Pic</div>;
+	return <figure className='Pic'>pic</figure>;
 }
 
 export default Pic;

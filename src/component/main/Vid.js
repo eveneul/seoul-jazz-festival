@@ -1,7 +1,7 @@
 import React from 'react';
 
 function Vid() {
-	return <div>Vid</div>;
+	return <figure className='Vid'>Vid</figure>;
 }
 
 export default Vid;

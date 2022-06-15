@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&family=Noto+Sans+KR:wght@100;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,100;9..144,400;9..144,700&family=Montserrat:wght@100;400;700&family=Noto+Sans+KR:wght@100;400;700&display=swap');
 
 //common
 @import './common/reset';
@@ -15,6 +15,10 @@
 
 //main page
 @import './main/visual';
+@import './main/headliner';
+@import './main/main-notice';
+@import './main/pic';
+@import './main/vid';
 
 // sub page
 @import './sub/artist';

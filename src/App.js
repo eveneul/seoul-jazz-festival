@@ -7,6 +7,10 @@ import Footer from './component/common/Footer';
 
 //main
 import Visual from './component/main/Visual';
+import Headliner from './component/main/Headliner';
+import MainNotice from './component/main/MainNotice';
+import Vid from './component/main/Vid';
+import Pic from './component/main/Pic';
 //sub
 import Artist from './component/sub/Artist';
 import Location from './component/sub/Location';
@@ -22,6 +26,10 @@ function App() {
 				<Route exact path='/'>
 					<Header type={'main'} />
 					<Visual />
+					<Headliner />
+					<MainNotice />
+					<Vid />
+					<Pic />
 				</Route>
 
 				<Route path='/' render={() => <Header type={'sub'} />} />

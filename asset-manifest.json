@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/seoul-jazz-festival/static/css/main.86dfcb6d.css",
-    "main.js": "/seoul-jazz-festival/static/js/main.9e699add.js",
+    "main.css": "/seoul-jazz-festival/static/css/main.42979b90.css",
+    "main.js": "/seoul-jazz-festival/static/js/main.5c38260d.js",
     "index.html": "/seoul-jazz-festival/index.html",
-    "main.86dfcb6d.css.map": "/seoul-jazz-festival/static/css/main.86dfcb6d.css.map",
-    "main.9e699add.js.map": "/seoul-jazz-festival/static/js/main.9e699add.js.map"
+    "main.42979b90.css.map": "/seoul-jazz-festival/static/css/main.42979b90.css.map",
+    "main.5c38260d.js.map": "/seoul-jazz-festival/static/js/main.5c38260d.js.map"
   },
   "entrypoints": [
-    "static/css/main.86dfcb6d.css",
-    "static/js/main.9e699add.js"
+    "static/css/main.42979b90.css",
+    "static/js/main.5c38260d.js"
   ]
 }

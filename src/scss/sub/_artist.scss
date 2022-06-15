@@ -1,13 +1,7 @@
 .Artist {
 	width: 100%;
 	font-family: 'Montserrat', sans-serif;
-	background: rgb(232, 182, 255);
-	background: linear-gradient(
-		65deg,
-		rgba(232, 182, 255, 0.5) 0%,
-		rgba(141, 241, 255, 0.5) 50%,
-		rgba(106, 255, 171, 0.49763655462184875) 100%
-	);
+	background-color: #ecebea;
 	article {
 		float: left;
 	}

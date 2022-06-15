@@ -38,7 +38,6 @@ function Artist() {
 								key={idx}
 								onClick={() => {
 									setOnPopup(!onPopup);
-									console.log('히!');
 								}}>
 								<div className='img'>
 									<img

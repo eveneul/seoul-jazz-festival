@@ -1,0 +1,29 @@
+{
+  "artist-main": [
+    {
+      "name": "HONNE",
+      "pic": "honne.png",
+      "desc": "음악씬의 세계적 트렌드를 이끄는 천재적인 감각의 신스팝 듀오"
+    },
+    {
+      "name": "Pink Sweat$",
+      "pic": "pink-sweats.png",
+      "desc": "달콤한 시그니처 사운드, 'At My Worst', 'Honesty'의 핑크 스웨츠 첫 내한"
+    },
+    {
+      "name": "백예린",
+      "pic": "yerinbaek.png",
+      "desc": "탄탄하고 화려한 보컬의 싱어송라이터"
+    },
+    {
+      "name": "AKMU",
+      "pic": "akmu.png",
+      "desc": "음악성과 대중성을 겸비한 시대의 아이콘, 섬세한 프로듀싱 능력과 독보적인 음색의 음원 강자"
+    },
+    {
+      "name": "Alec Benjamin",
+      "pic": "alec-benjamin.png",
+      "desc": "타임지 선정 ‘차세대를 위한 팝 스토리텔러’, 감성적인 보컬과 잔잔하게 흐르는 어쿠스틱 연주"
+    }
+  ]
+}

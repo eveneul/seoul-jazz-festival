@@ -4,7 +4,34 @@ figure.headliner {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	p {
-		background-color: red;
+	position: relative;
+	background-color: #eceae4;
+
+	.swiper {
+		height: 100%;
+		.swiper-wrapper {
+			.swiper-slide {
+				position: relative;
+
+				.img {
+					position: absolute;
+					top: 60%;
+					right: 10%;
+					transform: translateY(-50%) scale(1.05);
+				}
+
+				.text {
+					position: absolute;
+					top: 50%;
+					left: 10%;
+					transform: translateY(-50%);
+
+					h2 {
+						font-size: 8rem;
+						color: $text;
+					}
+				}
+			}
+		}
 	}
 }

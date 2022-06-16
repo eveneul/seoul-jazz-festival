@@ -128,3 +128,23 @@
 		}
 	}
 }
+
+@media screen and (max-width: $tablet) {
+	.Community {
+		.community-inner {
+			width: 100%;
+			.community-title {
+				h2 {
+					font-size: $fontXXL;
+				}
+			}
+			.inputBox {
+				.write-box {
+					input {
+						padding: 20px;
+					}
+				}
+			}
+		}
+	}
+}

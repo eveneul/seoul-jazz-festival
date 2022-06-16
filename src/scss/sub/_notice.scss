@@ -62,3 +62,70 @@
 		}
 	}
 }
+
+@media screen and (max-width: $tablet) {
+	.Notice {
+		> .inner {
+			> article {
+				.notice-title {
+					width: 100%;
+					padding: 20px;
+
+					h3 {
+						font-size: $fontXXL;
+					}
+				}
+
+				.list {
+					width: 100%;
+
+					ul li {
+						p {
+							font-size: $fontL;
+						}
+
+						span {
+							width: 40px;
+							height: 40px;
+							line-height: 40px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $mobile) {
+	.Notice {
+		> .inner {
+			> article {
+				.notice-title {
+					h3 {
+						font-size: $fontXL;
+					}
+				}
+
+				.list {
+					ul li {
+						cursor: pointer;
+
+						&:hover {
+							p {
+								font-size: 16px;
+							}
+						}
+						p {
+							font-size: $fontM;
+							transition: 0.4s;
+						}
+
+						span {
+							display: none;
+						}
+					}
+				}
+			}
+		}
+	}
+}

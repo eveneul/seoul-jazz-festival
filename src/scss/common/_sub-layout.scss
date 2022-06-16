@@ -31,3 +31,33 @@
 		}
 	}
 }
+
+@media screen and (max-width: $tablet) {
+	.content {
+		.title {
+			top: 60px;
+			transition: 0.4s;
+			h2 {
+				font-size: $fontXXL;
+			}
+		}
+
+		.inner {
+			width: 100%;
+			padding: 0 20px;
+			padding-top: 200px;
+		}
+	}
+}
+
+@media screen and (max-width: $mobile) {
+	.content {
+		.title {
+			top: 50px;
+		}
+
+		.inner {
+			padding-top: 150px;
+		}
+	}
+}

@@ -55,3 +55,85 @@ footer {
 		}
 	}
 }
+
+@media screen and (max-width: $tablet) {
+	footer {
+		.inner {
+			width: 100%;
+
+			ul {
+				flex-wrap: wrap;
+				li {
+					&:not(:last-child) {
+						margin-right: 30px;
+						&::after {
+							content: '';
+							display: none;
+						}
+					}
+
+					a {
+						font-size: 14px;
+					}
+				}
+			}
+
+			.footer-info {
+				flex-wrap: wrap;
+				address {
+					margin-bottom: 20px;
+					font-size: 14px;
+				}
+
+				p {
+					font-size: 14px;
+				}
+			}
+
+			span {
+				font-size: 14px;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $mobile) {
+	footer {
+		.inner {
+			padding: 50px 20px;
+
+			ul {
+				flex-direction: column;
+				align-items: center;
+				li {
+					&:not(:last-child) {
+						margin-right: 0;
+						margin-bottom: 20px;
+					}
+
+					&:hover a {
+						border-bottom: 1px solid #888;
+					}
+
+					a {
+						font-size: 14px;
+					}
+				}
+			}
+
+			.footer-info {
+				flex-wrap: wrap;
+				flex-direction: column;
+				align-items: center;
+
+				p {
+					margin-bottom: 20px;
+				}
+			}
+
+			span {
+				text-align: center;
+			}
+		}
+	}
+}

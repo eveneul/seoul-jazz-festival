@@ -34,8 +34,3 @@ const youtubeSlice = createSlice({
 });
 
 export default youtubeSlice.reducer;
-
-/*		const key = 'AIzaSyB7x1LAoidfLll4QFRLADxWagGsvelBXRs';
-		const VidPlaylist = 'PLUzA4Nj5MAHGeFBwh55iK7V4hY9aDp6ds';
-		const VidNum = 6;
-		const VidUrl = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=${key}&playlistId=${VidPlaylist}&maxResults=${VidNum}`; */

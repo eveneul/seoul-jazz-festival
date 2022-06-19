@@ -12,7 +12,6 @@ function Headliner() {
 
 	useEffect(() => {
 		axios.get(`${path}/DB/artist-visual.json`).then((json) => {
-			console.log(json.data.artistMain);
 			setArtists(json.data.artistMain);
 		});
 	}, []);

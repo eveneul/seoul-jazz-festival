@@ -9,10 +9,11 @@ figure.headliner {
 
 	.swiper {
 		height: 100%;
+		position: relative;
+
 		.swiper-wrapper {
 			.swiper-slide {
 				position: relative;
-
 				.img {
 					position: absolute;
 					top: 60%;

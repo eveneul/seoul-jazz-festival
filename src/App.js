@@ -19,7 +19,16 @@ import Join from './component/sub/Join';
 import Notice from './component/sub/Notice';
 import Youtube from './component/sub/Youtube';
 
+import { fetchYoutube } from './redux/youtubeSlice';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+
 function App() {
+	const dispatch = useDispatch();
+
+	useEffect(() => {
+		dispatch(fetchYoutube());
+	}, []);
 	return (
 		<>
 			<Switch>
@@ -27,7 +36,6 @@ function App() {
 					<Header type={'main'} />
 					<Visual />
 					<Headliner />
-					<MainNotice />
 					<Vid />
 					<Pic />
 				</Route>

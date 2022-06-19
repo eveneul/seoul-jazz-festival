@@ -84,6 +84,8 @@ function Gallery() {
 					</div>
 					<Masonry>
 						{Items.map((item, idx) => {
+							const tit = item.title;
+							const owner = item.owner;
 							return (
 								<article
 									key={idx}
@@ -99,9 +101,13 @@ function Gallery() {
 											/>
 										</div>
 										<div className='text'>
-											<h3>{item.title}</h3>
+											<h3>
+												{tit.length > 10 ? tit.substr(0, 10) + '...' : tit}
+											</h3>
 
-											<span>{item.owner}</span>
+											<span>
+												{owner.length > 5 ? owner.substr(0, 5) + '...' : owner}
+											</span>
 										</div>
 									</div>
 								</article>

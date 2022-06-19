@@ -39,3 +39,38 @@
 		}
 	}
 }
+
+@media screen and (max-width: $tablet) {
+	.Location {
+		.inner {
+			width: 100%;
+			padding: 200px 50px 0 50px;
+			#map {
+				height: 300px;
+			}
+
+			.map-info {
+				> ul > li {
+					font-size: $fontM;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $mobile) {
+	.Location {
+		.inner {
+			padding-top: 150px;
+			#map {
+				height: 300px;
+			}
+
+			button {
+				width: 100px;
+				height: 30px;
+				font-size: $fontS;
+			}
+		}
+	}
+}

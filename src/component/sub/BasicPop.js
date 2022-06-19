@@ -1,26 +1,34 @@
-import React, { useEffect } from 'react';
+import { useEffect, useState, forwardRef, useImperativeHandle } from 'react';
 
-function BasicPop({ children, setOpen }) {
+const BasicPop = forwardRef(({ children }, ref) => {
+	const [open, setOpen] = useState(false);
 	useEffect(() => {
-		document.body.style.overflow = 'hidden';
+		open
+			? (document.body.style.overflow = 'hidden')
+			: (document.body.style.overflow = 'auto');
+	}, [open]);
 
-		return () => {
-			document.body.style.overflow = 'auto';
+	useImperativeHandle(ref, () => {
+		return {
+			open: () => setOpen(true),
+			close: () => setOpen(false),
 		};
-	}, []);
+	});
 
 	return (
 		<>
-			<div className='basicPop'>
-				<div className='con'>
-					{children}
-					<span className='close' onClick={() => setOpen(false)}>
-						close
-					</span>
-				</div>
-			</div>
+			{open && (
+				<aside className='basicPop'>
+					<div className='con'>
+						{children}
+						<span className='close' onClick={() => setOpen(false)}>
+							close
+						</span>
+					</div>
+				</aside>
+			)}
 		</>
 	);
-}
+});
 
 export default BasicPop;

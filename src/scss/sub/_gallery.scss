@@ -65,3 +65,35 @@
 		}
 	}
 }
+
+@media screen and (max-width: $tablet) {
+	.Gallery {
+		.galleryWrap {
+			article {
+				width: calc(50% - 20px);
+
+				.text {
+					h3 {
+						font-size: $fontS;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $mobile) {
+	.Gallery {
+		.galleryWrap {
+			article {
+				width: 100%;
+
+				.text {
+					h3 {
+						font-size: $fontM;
+					}
+				}
+			}
+		}
+	}
+}

@@ -6,11 +6,13 @@ import { Provider } from 'react-redux';
 import youtubeReducer from './redux/youtubeSlice';
 import { configureStore } from '@reduxjs/toolkit';
 import artistSlice from './redux/artistSlice';
+import flickrSlice from './redux/flickrSlice';
 
 const store = configureStore({
 	reducer: {
 		youtube: youtubeReducer,
 		artist: artistSlice,
+		flickr: flickrSlice,
 	},
 });
 

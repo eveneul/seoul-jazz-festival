@@ -6,11 +6,7 @@ import Header from './component/common/Header';
 import Footer from './component/common/Footer';
 
 //main
-import Visual from './component/main/Visual';
-import Headliner from './component/main/Headliner';
-import MainNotice from './component/main/MainNotice';
-import Vid from './component/main/Vid';
-import Pic from './component/main/Pic';
+import Main from './component/main/Main';
 //sub
 import Artist from './component/sub/Artist';
 import Location from './component/sub/Location';
@@ -23,6 +19,7 @@ import { fetchYoutube } from './redux/youtubeSlice';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { fetchArtist } from './redux/artistSlice';
+import { fetchFlickr } from './redux/flickrSlice';
 
 function App() {
 	const dispatch = useDispatch();
@@ -30,18 +27,12 @@ function App() {
 	useEffect(() => {
 		dispatch(fetchYoutube());
 		dispatch(fetchArtist());
+		dispatch(fetchFlickr());
 	}, []);
 	return (
 		<>
 			<Switch>
-				<Route exact path='/'>
-					<Header type={'main'} />
-					<Visual />
-					<Headliner />
-					<Vid />
-					<Pic />
-				</Route>
-
+				<Route exact path='/' component={Main}></Route>
 				<Route path='/' render={() => <Header type={'sub'} />} />
 			</Switch>
 

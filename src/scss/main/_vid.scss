@@ -1,75 +1,81 @@
 figure.Vid {
+	position: relative;
 	width: 100%;
 	height: 100vh;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	background-color: rgba(236, 234, 228, 1);
+	padding-top: 400px;
+
+	h3 {
+		position: absolute;
+		top: 10%;
+		left: 0;
+		text-transform: uppercase;
+		color: #333;
+		font-size: 7rem;
+		letter-spacing: -0.05em;
+	}
+
+	> span {
+		position: absolute;
+		top: 30%;
+		right: 0;
+		font-size: 2rem;
+		color: $text;
+		letter-spacing: -0.05em;
+	}
+
 	.inner {
 		width: 1180px;
+		opacity: 0;
+		transition: 1s;
+		position: relative;
 		margin: 0 auto;
 
 		&::after {
 			overflow: hidden;
 		}
-	}
-	article {
-		float: left;
-		width: 280px;
-		height: 370px;
-		margin-right: 20px;
-		cursor: pointer;
-		position: relative;
-		overflow: hidden;
 
-		&:nth-of-type(2),
-		&:nth-of-type(4) {
+		article {
+			float: left;
+			width: 280px;
+			height: 400px;
+			margin-right: 20px;
+			position: relative;
+			transition: transform 0.5s;
+			transition-duration: 0.5s;
 			transform: translateY(100px);
-		}
-
-		&:last-child {
-			margin-right: 0;
-		}
-
-		.pic {
-			width: 100%;
-			height: 100%;
 			overflow: hidden;
+			cursor: pointer;
 
-			img {
+			@for $i from 0 to 4 {
+				&:nth-of-type(#{$i + 1}) {
+					transition-delay: 0.2s * $i;
+				}
+			}
+
+			&:nth-of-type(4) {
+				margin-right: 0;
+			}
+			.pic {
 				width: 100%;
 				height: 100%;
-				object-fit: cover;
-				transform: scale(1.4);
-				filter: grayscale(1);
-				transition: 0.5s;
+				overflow: hidden;
+				img {
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+					transform: scale(1.4);
+				}
 			}
 		}
+	}
 
-		.btn {
-			width: 100%;
-			height: 100%;
-			position: absolute;
-			top: 100%;
-			left: 0;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			background-color: rgba(255, 255, 255, 0.4);
-			transition: 0.5s;
-			span {
-				font-size: $fontM;
-				color: $white;
-				font-weight: bold;
-			}
-		}
+	&.on .inner {
+		opacity: 1;
+	}
 
-		&:hover {
-			.btn {
-				top: 0;
-			}
-			.pic img {
-				filter: none;
-			}
-		}
+	&.on article {
+		transform: translateY(0px);
+		opacity: 1;
 	}
 }

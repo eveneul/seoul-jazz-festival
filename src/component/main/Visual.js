@@ -22,7 +22,13 @@ function Visual() {
 				</div>
 			</div>
 			<div className='vid'>
-				<div></div>
+				<div className='content'>
+					<video
+						src={`${process.env.PUBLIC_URL}/vid/mainVid.mp4`}
+						muted
+						autoPlay
+						loop></video>
+				</div>
 			</div>
 			<div className='scroll-icon'>
 				<FontAwesomeIcon icon={faArrowDownLong} />

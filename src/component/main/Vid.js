@@ -27,6 +27,9 @@ function Vid() {
 											alt={vid.snippet.title}
 										/>
 									</div>
+									<div className='btn'>
+										<span>Click!</span>
+									</div>
 								</article>
 							);
 						}

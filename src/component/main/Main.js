@@ -50,7 +50,6 @@ function Main() {
 			<Header />
 			<Visual />
 			<Vid scroll={scroll} start={position.current[1]} base={base} />
-			<Pic />
 		</main>
 	);
 }

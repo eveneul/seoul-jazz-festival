@@ -22,12 +22,14 @@ import Youtube from './component/sub/Youtube';
 import { fetchYoutube } from './redux/youtubeSlice';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
+import { fetchArtist } from './redux/artistSlice';
 
 function App() {
 	const dispatch = useDispatch();
 
 	useEffect(() => {
 		dispatch(fetchYoutube());
+		dispatch(fetchArtist());
 	}, []);
 	return (
 		<>

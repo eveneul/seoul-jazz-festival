@@ -1,15 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowDownLong } from '@fortawesome/free-solid-svg-icons';
+import { useSelector } from 'react-redux';
 
 function Visual() {
 	const path = process.env.PUBLIC_URL;
-	const [headliner, setHeadliner] = useState([]);
+	const Artist = useSelector((store) => store.artist.data);
 
 	return (
-		<figure className='visual'>
+		<figure className='visual mainSelection'>
 			<div className='text'>
 				<div className='title'>
 					<h2>
@@ -21,6 +19,27 @@ function Visual() {
 					<span>88 Garden Olympic Park</span>
 				</div>
 			</div>
+			<div className='headliner'>
+				{Artist.map((el, idx) => {
+					if (idx < 6) {
+						return (
+							<>
+								<article className='artist' key={idx}>
+									<div className='img'>
+										<img
+											src={`${path}/img/artist/${el.pic}`}
+											alt={`${el.name} photo`}
+										/>
+									</div>
+									<div className='content'>
+										<span>{el.name}</span>
+									</div>
+								</article>
+							</>
+						);
+					}
+				})}
+			</div>
 			<div className='vid'>
 				<div className='content'>
 					<video
@@ -29,9 +48,6 @@ function Visual() {
 						autoPlay
 						loop></video>
 				</div>
-			</div>
-			<div className='scroll-icon'>
-				<FontAwesomeIcon icon={faArrowDownLong} />
 			</div>
 		</figure>
 	);
